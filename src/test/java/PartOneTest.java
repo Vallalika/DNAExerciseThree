@@ -108,13 +108,14 @@ public class PartOneTest {
     @Test
     public void testCgRatio() {
         String dna = "ATGCCATAG";
-        assertEquals(0.4444444,cgRatio(dna));
+        assertEquals(0.4444444,partOne.cgRatio(dna));
     }
+
 
     @Test
     public void canCountCtg() {
         String dna = "CTGTGCCCCTGGTCTG";
-        assertEquals(3,countCtg(dna));
+        assertEquals(3,partOne.countCtg(dna));
     }
 
     @After
