@@ -1,3 +1,5 @@
+import edu.duke.StorageResource;
+
 public class PartOne {
 
     public int findStopCodon(String dna, int startIndex, String stopCodon) {
@@ -39,5 +41,22 @@ public class PartOne {
                 break;
             }
         }
+    }
+
+    public StorageResource getAllGenes(String dna) {
+        StorageResource genes = new StorageResource();
+        String dnaStrand = dna;
+        while (true) {
+            String gene = findGene(dnaStrand);
+            if (gene != "") {
+                genes.add(gene);
+                int geneIndex = dnaStrand.indexOf(gene);
+                int startIndex = geneIndex + gene.length();
+                dnaStrand = dnaStrand.substring(geneIndex + gene.length());
+            } else {
+                break;
+            }
+        }
+        return genes;
     }
 }

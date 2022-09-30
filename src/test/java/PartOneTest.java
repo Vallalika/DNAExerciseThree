@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class PartOneTest {
 
@@ -99,7 +99,10 @@ public class PartOneTest {
         genes.add("ATGATCGCTGATTATGTGACGTGA");
         genes.add("ATGACGATGATCGCTTGA");
         genes.add("ATGTGA");
-        assertEquals(genes, partOne.getAllGenes(dna));
+        assertEquals(genes.size(), partOne.getAllGenes(dna).size());
+        assertTrue(partOne.getAllGenes(dna).contains("ATGATCGCTGATTATGTGACGTGA"));
+        assertTrue(partOne.getAllGenes(dna).contains("ATGATCGCTGATTATGTGACGTGA"));
+        assertTrue(partOne.getAllGenes(dna).contains("ATGATCGCTGATTATGTGACGTGA"));
     }
 
     @After
