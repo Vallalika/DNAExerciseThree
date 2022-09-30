@@ -1,3 +1,4 @@
+import edu.duke.StorageResource;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -89,6 +90,16 @@ public class PartOneTest {
         partOne.printAllGenes(dna);
         assertEquals("ATGATCGCTGATTATGTGACGTGA" + "\n" +
                 "ATGACGATGATCGCTTGA" + "\n" + "ATGTGA", outContent.toString().trim());
+    }
+
+    @Test
+    public void canGetAllGenes() {
+        String dna = "AAAATGATCGCTGATTATGTGACGTGATAATGACGATGATCGCTTGATTATGTGACGTGATAAGACG";
+        StorageResource genes = new StorageResource();
+        genes.add("ATGATCGCTGATTATGTGACGTGA");
+        genes.add("ATGACGATGATCGCTTGA");
+        genes.add("ATGTGA");
+        assertEquals(genes, partOne.getAllGenes(dna));
     }
 
     @After
