@@ -18,7 +18,7 @@ public class PartOneTest {
 
     @Before
     public void before() {
-        System.setOut(new PrintStream(outContent)); // assign outContent to be tbe new output stream
+        System.setOut(new PrintStream(outContent)); // assign outContent to be the new output stream
         partOne = new PartOne();
         startIndex = 0;
         stopCodon = "TGA";

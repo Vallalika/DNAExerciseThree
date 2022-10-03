@@ -4,6 +4,7 @@ jars/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+*.fa
 
 ### STS ###
 .apt_generated
