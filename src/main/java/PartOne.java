@@ -51,7 +51,6 @@ public class PartOne {
             if (gene != "") {
                 genes.add(gene);
                 int geneIndex = dnaStrand.indexOf(gene);
-                int startIndex = geneIndex + gene.length();
                 dnaStrand = dnaStrand.substring(geneIndex + gene.length());
             } else {
                 break;
@@ -59,4 +58,5 @@ public class PartOne {
         }
         return genes;
     }
+
 }

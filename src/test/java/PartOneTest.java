@@ -105,19 +105,6 @@ public class PartOneTest {
         assertTrue(partOne.getAllGenes(dna).contains("ATGATCGCTGATTATGTGACGTGA"));
     }
 
-    @Test
-    public void testCgRatio() {
-        String dna = "ATGCCATAG";
-        assertEquals(0.4444444,partOne.cgRatio(dna));
-    }
-
-
-    @Test
-    public void canCountCtg() {
-        String dna = "CTGTGCCCCTGGTCTG";
-        assertEquals(3,partOne.countCtg(dna));
-    }
-
     @After
     public void restoreStreams() {
         System.setOut(originalOut); // reassign originalOut to output stream
