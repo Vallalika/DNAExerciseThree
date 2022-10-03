@@ -9,4 +9,19 @@ public class PartTwo {
         }
         return cgCount / dna.length();
     }
+
+    public int countCtg(String dna) {
+        String dnaStrand = dna;
+        int ctgCount = 0;
+        while (true) {
+            int ctgIndex = dnaStrand.indexOf("CTG");
+            if (ctgIndex != -1) {
+                ctgCount += 1;
+                dnaStrand = dnaStrand.substring(ctgIndex + 3);
+            } else {
+                break;
+            }
+        }
+        return ctgCount;
+    }
 }
