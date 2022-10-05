@@ -33,24 +33,16 @@ public class PartThreeTest {
                 "ATGATCGCTGATTATGTGAC",outContent.toString().trim().substring(0,34));
     }
 
-    //    @Test
-//    public void printsHighCgRatio() {
-//        sr.add("ATGACGAGGACCGCGTGAATGAGCGCCGGCCCCGCGGCGTGATTATGTGATTTTTTTTTAA");
-//        partThree.processGenes(sr);
-//        assertEquals("ATGACGAGGACCGCGTGA" + "\n" +
-//                "ATGAGCGCCGGCCCCGCGGCGTGA",outContent.toString().trim());
-//    }
-//
-//    @Test
-//    public void doesNotPrintLowCgRatio() {
-//        sr.add("ATGTTTTGATTATGTGATTTTTTTTTAA");
-//        partThree.processGenes(sr);
-//        assertEquals("ATGACGAGGACCGCGTGA" + "\n" +
-//                "ATGAGCGCCGGCCCCGCGGCGTGA",outContent.toString().trim());
-//    }
-//
-//    @After
-//    public void restoreStreams() {
-//        System.setOut(originalOut);
-//    }
-//}
+    @Test
+    public void printsHighCgRatioNotLowCgRatio() {
+        sr.add("ATTTAA");
+        sr.add("ACGCGCGCGCGCGCGCGCGCGCGCGCGCG");
+        partThree.processGenes(sr);
+        assertEquals("ACGCGCGCGCGCGCGCGCGCGCGCGCGCG",outContent.toString().trim().substring(0,29));
+    }
+
+    @After
+    public void restoreStreams() {
+        System.setOut(originalOut);
+    }
+}
