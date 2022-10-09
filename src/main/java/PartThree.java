@@ -12,7 +12,7 @@ public class PartThree {
             if (gene.length() > longestGene.length()) {
                 longestGene = gene;
             }
-            if ( gene.length() > 9 ) {
+            if ( gene.length() > 60 ) {
                 longGeneCount += 1;
                 System.out.println(gene);
             }

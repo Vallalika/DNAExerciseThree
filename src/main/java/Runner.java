@@ -4,16 +4,12 @@ import edu.duke.StorageResource;
 public class Runner {
 
     public static void main(String[] args) {
-//        FileResource fr = new FileResource("brca1line.fa");
-//        String dna = fr.asString();
-        StorageResource dnaStrands = new StorageResource();
-        dnaStrands.add("ATGATCGCTGATTATGTGACGTGACTAATGACGATGATCGCTTGACTTATGTGACGTGATAAGACG");
-        dnaStrands.add("ATGATGA");
-        dnaStrands.add("ATGACGAGGACCGCGTGAATGAGCGCCGGCCCCGCGGCGTGATTATGTGATTTTTTTTTAA");
-        dnaStrands.add("ATGTTTTGATTATGTGATTTTTTTTTAA");
-
+        FileResource fr = new FileResource("brca1line.fa");
+        String dna = fr.asString().toUpperCase();
+        PartOne partOne = new PartOne();
+        StorageResource allGenes = partOne.getAllGenes(dna);
         PartThree partThree = new PartThree();
-        partThree.processGenes(dnaStrands);
-
+        partThree.processGenes(allGenes);
     }
+
 }

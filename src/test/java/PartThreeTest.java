@@ -27,10 +27,9 @@ public class PartThreeTest {
     public void printsLongDnaSequenceAndIgnoresShortSequence() {
         sr.add("ATGATCGCTGATT");
         sr.add("ATGATCG");
-        sr.add("ATGATCGCTGATTATGTGAC");
+        sr.add("ATGATCGCTGATTATGTGACATGATCGCTGATTATGTGACATGATCGCTGATTATGTTTTTGA");
         partThree.processGenes(sr);
-        assertEquals("ATGATCGCTGATT" + "\n" +
-                "ATGATCGCTGATTATGTGAC",outContent.toString().trim().substring(0,34));
+        assertEquals("ATGATCGCTGATTATGTGACATGATCGCTGATTATGTGACATGATCGCTGATTATGTTTTTGA",outContent.toString().trim().substring(0,63));
     }
 
     @Test
@@ -38,7 +37,7 @@ public class PartThreeTest {
         sr.add("ATTTAA");
         sr.add("ACGCGCGCGCGCGCGCGCGCGCGCGCGCG");
         partThree.processGenes(sr);
-        assertEquals("ACGCGCGCGCGCGCGCGCGCGCGCGCGCG",outContent.toString().trim().substring(0,29));
+        assertEquals("ACGCGCGCGCGCGCGCGCGCGCGCGCGCG",outContent.toString().trim().substring(2, 31));
     }
 
     @After
